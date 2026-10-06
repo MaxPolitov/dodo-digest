@@ -436,6 +436,52 @@ a.add.cta{display:block;text-align:center;text-decoration:none;color:var(--accen
 .fin-dk .lfl em{color:var(--accent)}
 .fin-dk .lfl-t b{color:var(--fg);font-weight:600}
 #combo-dk > h2{text-transform:lowercase}
+
+/* ---------- Подвал ---------- */
+.site-foot{background:#111;color:#fff;margin-top:56px;border-radius:40px 40px 0 0;padding-block:40px calc(40px + env(safe-area-inset-bottom,0px))}
+.foot-in{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.de-logo{height:40px;width:auto;max-width:100%;display:block;flex:none}
+.foot-t{margin:0;font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.01em}
+.foot-t .sep{opacity:.35;margin:0 8px;font-weight:400}
+:root[data-brand="drinkit"] .site-foot{background:var(--accent)}
+@media (max-width:720px){.site-foot{border-radius:28px 28px 0 0;margin-top:40px;padding-block:28px calc(28px + env(safe-area-inset-bottom,0px))}.foot-in{flex-direction:column;align-items:flex-start;gap:14px}.de-logo{height:34px}.foot-t{font-size:15px}}
+
+/* ---------- Промо-баннер сбоку (как на dodopizza.ru) ---------- */
+.promo{position:relative;margin-block:8px 0}
+.promo-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:36px;scroll-behavior:smooth}
+.promo-track::-webkit-scrollbar{display:none}
+.ps{flex:0 0 100%;scroll-snap-align:start;position:relative;overflow:hidden;min-height:470px;padding:28px 26px;color:#fff;display:flex;flex-direction:column;text-decoration:none;text-align:left;border-radius:36px;cursor:pointer}
+.ps h4{margin:0;font-family:var(--display);font-weight:800;font-size:30px;line-height:1.08;letter-spacing:-.02em;text-wrap:balance;position:relative;z-index:1}
+.ps p{margin:10px 0 0;font-size:16px;line-height:1.3;opacity:.92;position:relative;z-index:1;max-width:26ch}
+.ps .go{position:relative;z-index:1;align-self:flex-start;margin-top:16px;background:#fff;color:#111;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px}
+.ps .art{position:absolute;left:0;right:0;bottom:44px;top:190px;display:flex;align-items:flex-end;justify-content:center;pointer-events:none}
+.ps .art img,.ps .art svg{max-height:100%;max-width:86%;width:auto;height:auto;filter:drop-shadow(0 18px 24px rgba(0,0,0,.25));transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.ps .art svg{height:100%}
+.ps .art .emo{font-size:150px;line-height:1;filter:drop-shadow(0 18px 24px rgba(0,0,0,.25))}
+.ps:hover .art img,.ps:hover .art svg{transform:translateY(-6px) rotate(-2deg) scale(1.03)}
+.ps .legal{position:absolute;left:18px;right:18px;bottom:12px;font-size:8.5px;line-height:1.25;text-transform:uppercase;opacity:.6;text-align:center;z-index:1}
+.promo-lbl{margin:0 4px 10px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.ps .art.ai{top:250px;bottom:40px}
+.ps .art.ai svg{filter:drop-shadow(0 14px 22px rgba(0,0,0,.25))}
+.promo-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+.promo-dots button{width:8px;height:6px;border-radius:3px;background:var(--line);padding:0;transition:width .3s,background .3s}
+.promo-dots button[aria-current="true"]{width:40px;background:var(--fg)}
+:root[data-brand="drinkit"] .promo-dots button[aria-current="true"]{background:var(--accent)}
+@media (min-width:1100px){
+  main.has-promo{display:grid;grid-template-columns:minmax(0,1fr) 340px;column-gap:40px;align-items:start}
+  main.has-promo > *:not(.promo){grid-column:1}
+  main.has-promo > .promo{grid-column:2;grid-row:1 / span 30;position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px)}
+}
+@media (max-width:1099px){
+  .promo{margin-top:20px}
+  .ps{min-height:300px;padding:22px 20px}
+  .ps h4{font-size:24px}.ps p{font-size:14px}
+  .ps .art{top:auto;bottom:30px;left:auto;right:6px;width:46%;height:62%;align-items:flex-end}
+  .ps h4,.ps p{max-width:58%}
+  .ps .art .emo{font-size:96px}
+  .ps .art.ai{top:auto;bottom:34px;right:8px;width:44%;height:auto;max-height:60%}
+  .ps .art.ai svg{height:auto;width:100%;max-width:100%}
+}
 </style>
 
 <div class="top wrap">
@@ -458,19 +504,22 @@ a.add.cta{display:block;text-align:center;text-decoration:none;color:var(--accen
   <div class="wrap" data-show="dodo">
     <a href="#combo">Комбо</a>
     <a href="#pizza">Запуски</a>
-    <a href="#ai">AI</a>
     <a href="#soon">Скоро в меню</a>
     <a href="#" class="go" data-go="drinkit">Дринкит →</a>
   </div>
   <div class="wrap" data-show="drinkit">
     <a href="#combo-dk">Цифры</a>
     <a href="#season">Новинки сезона</a>
-    <a href="#ai">AI</a>
     <a href="#" class="go" data-go="dodo">← Додо Пицца</a>
   </div>
 </nav>
 
-<main class="wrap">
+<main class="wrap has-promo">
+  <aside class="promo" aria-label="Не пропустите">
+    <p class="promo-lbl">Не пропустите</p>
+    <div class="promo-track" id="promoTrack"></div>
+    <div class="promo-dots" id="promoDots"></div>
+  </aside>
   <section class="cat" id="board" style="padding-bottom:0" hidden><div class="board"><div class="board-head"><h2>хит продаж месяца</h2><p id="boardSub">Один голос на человека. Выберите любимую новость в меню.</p></div><div class="rows" id="rows"></div><p class="board-note" id="boardNote"></p></div></section>
   <!-- ===== DODO ===== -->
   <div data-show="dodo">
@@ -537,7 +586,7 @@ a.add.cta{display:block;text-align:center;text-decoration:none;color:var(--accen
   </div>
 
   <!-- ===== ОБЩЕЕ ДЛЯ ОБОИХ БРЕНДОВ ===== -->
-  <section class="cat" id="ai">
+  <section class="cat" id="ai" hidden>
     <h2>AI в Dodo Brands</h2>
     <p class="sub">Инструменты для команды и партнёров, которые запустили в сентябре.</p>
     <div class="ai-grid">
@@ -574,7 +623,10 @@ a.add.cta{display:block;text-align:center;text-decoration:none;color:var(--accen
   </div>
 </main>
 
-<footer class="wrap">Дайджест Dodo Engineering · сентябрь 2026 · прототип.</footer>
+<footer class="site-foot"><div class="wrap foot-in">
+  <img class="de-logo" src="data:image/png;base64,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" alt="dodo engineering">
+  <p class="foot-t">Dodo Engineering Digest <span class="sep">|</span> Сентябрь 2026</p>
+</div></footer>
 
 <div id="layer"></div>
 
@@ -881,7 +933,7 @@ function setBrand(b,scroll){
   $("#logoMark").innerHTML=b==="dodo"
     ?`<rect x="1" y="1" width="42" height="42" rx="13" fill="#ed6e2d"/><path d="M14 30 V14 h7 a8 8 0 0 1 0 16z" fill="#fff"/><circle cx="28" cy="17" r="2.6" fill="#fff"/>`
     :`<rect x="1" y="1" width="42" height="42" rx="12" fill="#f5f2ec"/><path d="M14 13h16l-2 20h-12z" fill="#0d0d0d"/><rect x="12" y="11" width="20" height="4" rx="2" fill="#0d0d0d"/>`;
-  renderStories();
+  renderStories(); if(window.renderPromo&&document.getElementById("promoTrack").childElementCount) renderPromo();
   try{localStorage.setItem("de-brand",b)}catch(e){}
   if(scroll) window.scrollTo({top:0,behavior:"smooth"});
 }
@@ -920,6 +972,56 @@ function renderDrinkit(){
     <div class="foot"><span class="kcal"><b>${esc(n.kcal[0])}</b> ${esc(n.kcal[1])}</span><span class="plus" aria-hidden="true">+</span></div></div></button>`).join("");
 }
 
+
+/* ================== PROMO ================== */
+const PROMO=[
+  {brand:"all", href:"https://t.me/dododev", t:"Не ждите следующего дайджеста", s:"Свежие новости Dodo Engineering — в нашем Telegram-канале @dododev", bg:"linear-gradient(160deg,#37bbfe,#0a7fd1)", tg:true, go:"Подписаться ↗"},
+  {brand:"all", open:"mcp", t:"Пусть агент читает Time за вас", s:"MCP-коннектор: выжимки тредов и договорённости. 50+ человек и 700 вызовов в день", bg:"linear-gradient(160deg,#8c7cf5,#4a3fc7)", ai:"mcp"},
+  {brand:"all", open:"aibot", t:"База знаний ответит в Telegram", s:"Бот ищет по статьям и сразу присылает ссылку", bg:"linear-gradient(160deg,#4cc3ff,#1b8ed1)", ai:"aibot"},
+  {brand:"all", href:"https://t.me/borisgern", t:"Есть вопрос про AI?", s:"Пилоты, подписки, AI-проекты — пишите Борису Герну", bg:"linear-gradient(160deg,#2b2b2f,#0d0d0f)", emo:"✨", go:"Написать в Telegram ↗"},
+  {brand:"all", t:"AI-Cookbook", s:"Канал об AI-практиках для сотрудников УК: инструменты, гайды и кейсы коллег. Приходите со своими кейсами!", bg:"linear-gradient(160deg,#ff9a5a,#e85d1c)", emo:"🍳", go:""},
+  {brand:"all", href:"https://t.me/sergey_poyarkov", t:"ИИ-агенты и автоматизация в Додо", s:"Канал для партнёров об AI-инструментах Додо. Инвайт — у Сергея Пояркова", bg:"linear-gradient(160deg,#3ec58a,#14794c)", emo:"🦾", go:"Попросить инвайт ↗"}
+];
+function tgArt(){
+  const logo=(document.querySelector(".de-logo")||{}).src||"";
+  return `<svg viewBox="0 0 300 230" role="img" aria-label="Telegram-канал Dodo Engineering">
+   <defs><linearGradient id="tgp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d9f0ff"/></linearGradient></defs>
+   <g transform="rotate(-6 150 120)">
+    <rect x="40" y="40" width="220" height="150" rx="26" fill="#fff"/>
+    <rect x="40" y="40" width="220" height="44" rx="22" fill="#111"/><rect x="40" y="62" width="220" height="22" fill="#111"/>
+    ${logo?`<image href="${logo}" x="56" y="49" width="113" height="26"/>`:""}
+    <rect x="58" y="100" width="150" height="34" rx="14" fill="#eef7ff"/>
+    <rect x="70" y="111" width="110" height="5" rx="2.5" fill="#7aaed6"/><rect x="70" y="121" width="74" height="5" rx="2.5" fill="#b9d6ec"/>
+    <rect x="92" y="144" width="150" height="34" rx="14" fill="#2aabee"/>
+    <rect x="104" y="155" width="104" height="5" rx="2.5" fill="#fff"/><rect x="104" y="165" width="66" height="5" rx="2.5" fill="#cdeeff"/>
+   </g>
+   <g transform="translate(206 8) rotate(-12)">
+    <circle cx="38" cy="38" r="38" fill="url(#tgp)"/>
+    <path d="M18 37 L58 21 L51 57 L39 47 L31 54 L31 43 Z" fill="#2aabee"/>
+    <path d="M31 43 L52 27" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+   </g>
+  </svg>`;
+}
+let promoTimer=null;
+function renderPromo(){
+  const b=document.documentElement.dataset.brand||"dodo";
+  const list=PROMO.filter(x=>(x.brand===b||x.brand==="all")&&(!x.open||byId(x.open)));
+  const art=x=>{if(x.tg)return tgArt();if(x.ai)return aiArt(x.ai);if(x.img&&(CUTS[x.img]||IMGS[x.img]))return `<img src="${CUTS[x.img]||IMGS[x.img]}" alt="">`;if(x.cup){const n=byId(x.cup);return n?cup(n.cup):""}return `<span class="emo">${x.emo||""}</span>`};
+  $("#promoTrack").innerHTML=list.map((x,i)=>{const inner=`<h4>${esc(x.t)}</h4><p>${esc(x.s)}</p>${x.go===""?"":`<span class="go">${esc(x.go||"Подробнее")}</span>`}<span class="art${x.ai||x.tg?" ai":""}" aria-hidden="true">${art(x)}</span><span class="legal">12+ · Не реклама · Это дайджест Dodo Engineering за сентябрь 2026 · Подробные условия — внутри новости</span>`;
+    if(!x.href&&!x.open)return `<div class="ps" style="background:${x.bg}">${inner}</div>`;
+    return x.href?`<a class="ps" href="${x.href}" target="_blank" rel="noopener" style="background:${x.bg}">${inner}</a>`:`<button class="ps" data-open="${x.open}" style="background:${x.bg}">${inner}</button>`}).join("");
+  $("#promoDots").innerHTML=list.map((_,i)=>`<button aria-label="Баннер ${i+1}" data-pd="${i}"></button>`).join("");
+  const tr=$("#promoTrack"), dots=[...document.querySelectorAll("#promoDots button")];
+  const cur=()=>Math.round(tr.scrollLeft/Math.max(1,tr.clientWidth));
+  const mark=()=>{const c=cur();dots.forEach((d,i)=>d.setAttribute("aria-current",i===c))};
+  const go=i=>tr.scrollTo({left:i*tr.clientWidth});
+  dots.forEach(d=>d.onclick=()=>{go(+d.dataset.pd);restart()});
+  tr.onscroll=()=>{clearTimeout(tr._t);tr._t=setTimeout(mark,80)};
+  tr.scrollLeft=0;mark();
+  const reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function restart(){clearInterval(promoTimer);if(reduce||list.length<2)return;promoTimer=setInterval(()=>{if(tr.matches(":hover"))return;go((cur()+1)%list.length)},5000)}
+  restart();
+}
 /* ================== MODAL ================== */
 function openItem(id){
   const n=byId(id); if(!n) return;
@@ -1001,7 +1103,7 @@ $("#bDodo").onclick=()=>setBrand("dodo",true);
 $("#bDrinkit").onclick=()=>setBrand("drinkit",true);
 $("#cartBtn").onclick=openCart;
 
-hideItems();flagifyNews();renderDodo();renderDrinkit();renderShared();renderVotes();if(VOTING)initVotes();
+hideItems();flagifyNews();renderDodo();renderDrinkit();renderShared();renderPromo();renderVotes();if(VOTING)initVotes();
 let start="dodo"; try{start=localStorage.getItem("de-brand")||"dodo"}catch(e){}
 if(location.hash==="#drinkit") start="drinkit";
 setBrand(start==="drinkit"?"drinkit":"dodo");
