@@ -614,7 +614,7 @@ a.add.cta{display:block;text-align:center;text-decoration:none;color:var(--accen
 .k-qv .spk{max-width:150px}
 .k-qs{display:block;font-size:13px;color:#6b6e78;font-weight:600;margin:-4px 0 8px}
 .k-warn{margin:12px 0 0;font-size:13px;line-height:1.4;background:#fff6e0;color:#7a5600;border-radius:12px;padding:8px 10px}
-.k-goal{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;margin-top:14px;font-size:13px;color:#6b6e78}
+.k-goal{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:8px 10px;margin-top:14px;font-size:13px;color:#6b6e78}
 .k-goal b{color:#111}.k-gb{height:8px;border-radius:4px;background:#ececf1;overflow:hidden}.k-gb i{display:block;height:100%;background:#111;border-radius:4px}
 .k-src{margin:24px 4px 0;font-size:12px;color:#6b6e78}
 .k-tip{position:fixed;pointer-events:none;background:#111;color:#fff;font-size:12px;line-height:1.45;padding:8px 10px;border-radius:10px;white-space:nowrap;transform:translate(-50%,calc(-100% - 14px));opacity:0;transition:opacity .12s;z-index:90}
@@ -695,6 +695,14 @@ a.add.cta{display:block;text-align:center;text-decoration:none;color:var(--accen
  .rt td:nth-child(3){width:auto}
 }
 @media (max-width:380px){.k-tabs [role=tab]{padding:7px 9px;font-size:12.5px}}
+.k-note2{margin:10px 0 0;font-size:12px;line-height:1.4;color:#8a8d96}
+.k-q-win{position:relative}.k-q-win h3{padding-right:44px}
+.k-win{position:absolute;top:18px;right:20px;font-size:30px;line-height:1;transform-origin:50% 80%}
+.k-q-win:hover .k-win{animation:kPop .5s both}
+.k-q-win .k-gb i{background:#2e9e5b}
+.k-q-win .k-goal b{color:#1f7a45}
+.k-q-win:hover .k-goal b{color:#5fe39a}.k-q-win:hover .k-gb i{background:#5fe39a}
+.k-goal .k-gb{grid-column:1/-1}
 .k-osh{font-size:.55em;font-weight:600;color:var(--mut,#6b6e78)}
 .mini-ax{display:block;width:100%;max-width:300px;height:auto;margin-top:4px}
 </style>
@@ -719,13 +727,11 @@ a.add.cta{display:block;text-align:center;text-decoration:none;color:var(--accen
 
 <nav class="catnav" aria-label="Разделы меню">
   <div class="wrap" data-show="dodo">
-    <a href="#combo">Комбо</a>
     <a href="#pizza">Запуски</a>
     <a href="#soon">Скоро в меню</a>
     <a href="#" class="go" data-go="drinkit">Дринкит →</a>
   </div>
   <div class="wrap" data-show="drinkit">
-    <a href="#combo-dk">Цифры</a>
     <a href="#season">Новинки сезона</a>
     <a href="#soon-dk">Скоро в меню</a>
     <a href="#" class="go" data-go="dodo">← Додо Пицца</a>
@@ -741,18 +747,6 @@ a.add.cta{display:block;text-align:center;text-decoration:none;color:var(--accen
   <section class="cat" id="board" style="padding-bottom:0" hidden><div class="board"><div class="board-head"><h2>хит продаж месяца</h2><p id="boardSub">Один голос на человека. Выберите любимую новость в меню.</p></div><div class="rows" id="rows"></div><p class="board-note" id="boardNote"></p></div></section>
   <!-- ===== DODO ===== -->
   <div data-show="dodo">
-    <section class="cat" id="combo">
-      <h2>комбо месяца</h2>
-      <div class="tz ">
-        <div class="tz-grid">
-          <div class="tz-c"><span>Выручка Dodo Brands</span><b>14,04 млрд ₽</b><em class="up">▲ +19,4% к сентябрю 2025</em></div>
-          <div class="tz-c"><span>Доля Дринкита в выручке</span><b>7,9%</b><em class="up">▲ было 3,2% год назад</em></div>
-          <div class="tz-c"><span>Доля digital в выручке Додо Пиццы&nbsp;🇷🇺</span><b>94,3%</b><em class="up">▲ +3,8 п.п. за год</em></div>
-        </div>
-        <button class="tz-go" data-kitchen>Перейти в аналитику <span aria-hidden="true">→</span></button>
-      </div>
-    </section>
-
     <div class="intro">
       <h1>горячие запуски из печи</h1>
       <p>Нажмите на карточку товара — в ней детали и метрики запуска.</p>
@@ -779,17 +773,6 @@ a.add.cta{display:block;text-align:center;text-decoration:none;color:var(--accen
       <h1>привет, это <b>drinkit</b> —<br>сезонное меню разработки</h1>
       <p>4 новинки сентября. Нажмите на напиток — внутри подробности.</p>
     </div>
-    <section class="cat" id="combo-dk">
-      <h2>цифры месяца</h2>
-      <div class="tz tz-dk">
-        <div class="tz-grid">
-          <div class="tz-c"><span>Выручка Dodo Brands</span><b>14,04 млрд ₽</b><em class="up">▲ +19,4% к сентябрю 2025</em></div>
-          <div class="tz-c"><span>Доля Дринкита в выручке</span><b>7,9%</b><em class="up">▲ было 3,2% год назад</em></div>
-          <div class="tz-c"><span>Доля digital в выручке Додо Пиццы&nbsp;🇷🇺</span><b>94,3%</b><em class="up">▲ +3,8 п.п. за год</em></div>
-        </div>
-        <button class="tz-go" data-kitchen>Перейти в аналитику <span aria-hidden="true">→</span></button>
-      </div>
-    </section>
     <section class="cat" id="season">
       <h2>новинки сезона</h2>
       <p class="sub">Приложение, СмартКухня и сервисы для кофеен.</p>
@@ -963,15 +946,13 @@ const NEWS = [
    author:"Антон Савченков", email:"a.savchenkov@dodobrands.io", link:"", bg:"#e4ecf9", cup:"tonic"}
 ];
 const STORIES = [
-  {brand:"dodo", id:"hack", big:"88", cap:"участников хакатона PRODlenka", det:"20 команд, 34 города и страны, 45% — впервые на хакатоне.", bg:"#2f5d46"},
-  {brand:"dodo", id:"pickup", big:"+8,75 млн ₽", cap:"в месяц от самовывоза при стопе", det:"И +12 500 заказов ежемесячно. Раскатили на все страны.", bg:"#ed6e2d"},
-  {brand:"dodo", id:"coin", big:"+31%", cap:"конверсия в Коинстор на Android", det:"На iOS +19%. Новый коинстор едет во все страны.", bg:"#2f2a26"},
-  {brand:"dodo", id:"upsell", big:"+45%", cap:"апсейлов в карточке товара", det:"Соусы, напитки и десерты теперь рядом с пиццей.", bg:"#c43d2f"},
-  {brand:"dodo", id:"email", big:"99%", cap:"доставляемость email без спама", det:"Две недели прогрева домена — и канал снова живой.", bg:"#3b5bdb"},
-  {brand:"drinkit", id:"faces", big:"35", cap:"кофеен показывают лица бариста", det:"Фича с сентябрьского хакатона уже в проде.", bg:"#182da8"},
-  {brand:"drinkit", id:"1c", big:"18.09", cap:"1С на СмартКухне в Москве", det:"Четыре месяца проекта, первые дни в бою — штатно.", bg:"#334cdb"},
-  {brand:"drinkit", id:"chat", big:"0 VPN", cap:"чтобы написать в поддержку из приложения", det:"Чат поддержки теперь прямо в приложении. Идёт внутреннее тестирование.", bg:"#5c74e0"},
-  {brand:"drinkit", id:"svc", big:"Google SSO", cap:"вход в GrowthBook для кофеен", det:"Плюс ИИ-инструменты и стабильное компьютерное зрение без сбоев памяти.", bg:"#14161f"},
+  {brand:"dodo", id:"m-total", tag:"Dodo Brands", big:"14,04 млрд ₽", cap:"выручка за сентябрь", det:"+19,4% к сентябрю 2025 и −3,6% к августу. Все бренды, все страны.", bg:"#16171c", k:"k-fin"},
+  {brand:"dodo", id:"m-pizza", tag:"Додо Пицца", big:"12,93 млрд ₽", cap:"выручка Додо Пиццы", det:"+13,7% за год — это 92,1% всей выручки Dodo Brands.", bg:"#ed6e2d", k:"k-fin"},
+  {brand:"dodo", id:"m-digital", tag:"Додо Пицца", big:"94,3%", cap:"выручки в 🇷🇺 России — digital-заказы", det:"+3,8 п.п. за год. В 🇷🇺 России это 10,15 млрд ₽ и 9,57 млн заказов.", bg:"#c43d2f", k:"k-dig"},
+  {brand:"dodo", id:"m-app", tag:"Додо Пицца", big:"76,1%", cap:"выручки в 🇷🇺 России — приложение", det:"+1,3 п.п. за год. 6,98 млн заказов и 8,12 млн MAU в 🇷🇺 России.", bg:"#3b5bdb", k:"k-ch"},
+  {brand:"drinkit", id:"m-total-dk", tag:"Dodo Brands", big:"14,04 млрд ₽", cap:"выручка за сентябрь", det:"+19,4% к сентябрю 2025 и −3,6% к августу. Все бренды, все страны.", bg:"#16171c", k:"k-fin"},
+  {brand:"drinkit", id:"m-drinkit", tag:"Дринкит", big:"1,10 млрд ₽", cap:"выручка Дринкита", det:"+189,7% за год.", bg:"#182da8", k:"k-fin"},
+  {brand:"drinkit", id:"m-share-dk", tag:"Дринкит", big:"7,9%", cap:"всей выручки Dodo Brands", det:"Год назад было 3,2%.", bg:"#3b55e0", k:"k-fin"},
 ];
 
 /* ================== ART ================== */
@@ -1169,7 +1150,7 @@ function setBrand(b,scroll){
 function renderStories(){
   const b=document.documentElement.dataset.brand||"dodo";
   const list=STORIES.map((s,i)=>({...s,i})).filter(s=>s.brand===b);
-  $("#stories").innerHTML=list.map(s=>`<button class="story" data-story="${s.i}" style="background:${s.bg}"><span class="tag">${s.brand==="dodo"?"Додо Пицца":"Дринкит"}</span><span><span class="num">${esc(s.big)}</span></span><span class="cap">${esc(s.cap)}</span></button>`).join("");
+  $("#stories").innerHTML=list.map(s=>`<button class="story" data-story="${s.i}" style="background:${s.bg}"><span class="tag">${esc(s.tag||(s.brand==="dodo"?"Додо Пицца":"Дринкит"))}</span><span><span class="num">${esc(s.big).replace(/ (млрд|млн) /,"<br>$1&nbsp;")}</span></span><span class="cap">${esc(s.cap)}</span></button>`).join("");
 }
 function renderDodo(){
   const dodo=NEWS.filter(n=>n.brand==="dodo");
@@ -1393,7 +1374,8 @@ function renderKitchen(){
    {t:"Среднее SKU в доставке",d:"Сколько разных товаров в среднем заказе на доставку.",v:nf(L(sku),2),sub:"",c:[[(L(sku)-P(sku)>=0?'+':'−')+nf(Math.abs(L(sku)-P(sku)),2),'MoM'],[(L(sku)-F(sku)>=0?'+':'−')+nf(Math.abs(L(sku)-F(sku)),2),'YoY']],a:sku.slice(-9),g:"≥ 4,00",p:goal(L(sku),4)},
    {t:"4+ Frequency клиенты",d:"4 и более заказов за 90 дней.",v:mln(L(fr)),sub:pct(L(KD.pizza_ru_rfm_segment_4_frequent_share))+" клиентов",c:[[(L(fr)-P(fr)>=0?'+':'−')+nf(Math.abs(L(fr)-P(fr))/1e3,1)+' тыс.','MoM'],[(L(fr)-F(fr)>=0?'+':'−')+nf(Math.abs(L(fr)-F(fr))/1e3,1)+' тыс.','YoY']],a:fr.slice(-9),g:"≥ 2,8 млн",p:goal(L(fr),2.8e6)},
    {t:"Омни-пользователи",d:"Хотя бы один заказ в ресторане и один на доставку за 90 дней.",v:pct(L(om)),sub:mln(L(KD.ru_cnt_omni_client))+" человек",c:[[dPP(L(om),P(om)),'MoM'],[dPP(L(om),F(om)),'YoY']],a:om.slice(-9),g:"≥ 35%",p:goal(L(om),.35)},
-   {t:"Конверсия из 1-го в 4-й заказ",d:"Считается за 90 дней с момента первого заказа.",v:nf(L(cr),1)+'%',sub:"",c:[],a:cr.slice(-9),g:"≥ 17%",p:goal(L(cr),17)}
+   (()=>{const ci=KD.months.indexOf('2026-06'),cv=cr[ci],pv=cr[ci-1],a=cr.slice(ci-8,ci+1);
+     return {t:"Конверсия<br><span style=\"white-space:nowrap\">из 1-го в 4-й заказ</span>",d:"Считается за 90 дней с момента первого заказа. Берём последнюю когорту, у которой 90 дней уже прошли.",v:nf(cv,1)+'%',sub:"когорта июня 2026",c:[[dPP(cv/100,pv/100),'к когорте мая']],a,nosp:true,win:"🎉 Цель Q3 перевыполнена",g:"≥ 17%",p:goal(cv,17),pl:"✓ выполнено на "+Math.round(cv/17*100)+"%"}})()
   ];
   $("#kitchen").innerHTML=`
   <header class="k-head"><p class="k-kick">Сентябрь 2026 · данные команды аналитики</p><h1>аналитика</h1>
@@ -1436,10 +1418,10 @@ function renderKitchen(){
   </section>
 
   <section class="k-sec" id="k-q3"><h2>Целевые метрики B2C Додо Пиццы в Q3</h2><p class="k-sub"><span class="k-only">🍕 Только Додо Пицца</span>🇷🇺 Россия · B2C · сентябрь 2026</p>
-   <div class="k-row2">${q3.map(q=>`<div class="k-card k-q"><h3>${q.t}</h3><p class="k-d">${q.d}</p>
-     <div class="k-qv"><div><b class="k-hero or">${q.v}</b>${q.sub?`<span class="k-qs">${q.sub}</span>`:''}<div class="k-chips">${q.c.map(([v,l])=>chip(v,l)).join('')}</div></div>${spark(q.a,{w:150,h:50,color:'#6b6e78',fill:false})}</div>
+   <div class="k-row2">${q3.map(q=>`<div class="k-card k-q${q.win?' k-q-win':''}">${q.win?`<span class="k-win" role="img" aria-label="${q.win}" title="${q.win}">🎉</span>`:''}<h3>${q.t}</h3><p class="k-d">${q.d}</p>
+     <div class="k-qv"><div><b class="k-hero or">${q.v}</b>${q.sub?`<span class="k-qs">${q.sub}</span>`:''}<div class="k-chips">${q.c.map(([v,l])=>chip(v,l)).join('')}</div></div></div>
      ${q.warn?`<p class="k-warn">⚠️ ${q.warn}</p>`:''}
-     <div class="k-goal"><span>Цель ${q.g}</span><div class="k-gb"><i style="width:${q.p}%"></i></div><b>${q.p}%</b></div></div>`).join('')}</div>
+     <div class="k-goal"><span>Цель ${q.g}</span><b>${q.pl||('выполнено на '+q.p+'%')}</b><div class="k-gb"><i style="width:${q.p}%"></i></div></div>${q.note?`<p class="k-note2">${q.note}</p>`:''}</div>`).join('')}</div>
   </section>
   <p class="k-src">Источник: выгрузка команды аналитики. Цели Q3 — по данным аналитиков. Наведите на график, чтобы увидеть значения за месяц.</p>
   <div class="k-tip" id="kTip"></div>`;
@@ -1501,14 +1483,14 @@ function openStory(i){
     const s=STORIES[order[pos]];
     $("#layer").innerHTML=`<div class="sv"><div class="sv-card" style="background:${s.bg}">
       <div class="sv-bars">${order.map((_,k)=>`<i><b style="width:${k<pos?100:0}%"></b></i>`).join("")}</div>
-      <div class="sv-top"><span>${s.brand==="dodo"?"Додо Пицца":"Дринкит"} · сентябрь</span><button aria-label="Закрыть" id="svX">×</button></div>
+      <div class="sv-top"><span>${esc(s.tag||(s.brand==="dodo"?"Додо Пицца":"Дринкит"))} · сентябрь 2026</span><button aria-label="Закрыть" id="svX">×</button></div>
       <button class="sv-tap l" aria-label="Назад"></button><button class="sv-tap r" aria-label="Дальше"></button>
       <div class="sv-main"><div class="big">${esc(s.big)}</div><div class="cap">${esc(s.cap)}</div><div class="det">${esc(s.det)}</div></div>
-      <button class="sv-cta" id="svGo">Открыть позицию в меню</button></div></div>`;
+      <button class="sv-cta" id="svGo">${s.k?"Подробнее в разделе Аналитика →":"Открыть позицию в меню"}</button></div></div>`;
     $("#svX").onclick=closeLayer;
     $(".sv-tap.l").onclick=()=>{if(pos>0){pos--;show()}};
     $(".sv-tap.r").onclick=next;
-    $("#svGo").onclick=()=>{clearTimeout(svT);cancelAnimationFrame(svRaf);openItem(s.id)};
+    $("#svGo").onclick=()=>{clearTimeout(svT);cancelAnimationFrame(svRaf);if(s.k){closeLayer();setBrand("kitchen",true);setTimeout(()=>{const t=document.getElementById(s.k);if(t)t.scrollIntoView({behavior:"smooth",block:"start"})},450)}else openItem(s.id)};
     const bar=$(".sv-bars").children[pos].firstElementChild; const t0=performance.now(), D=5000;
     cancelAnimationFrame(svRaf);
     const tick=t=>{const p=Math.min(1,(t-t0)/D);bar.style.width=p*100+"%";if(p<1)svRaf=requestAnimationFrame(tick);else next()};
